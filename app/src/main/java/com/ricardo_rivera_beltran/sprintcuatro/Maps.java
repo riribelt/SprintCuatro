@@ -2,12 +2,14 @@ package com.ricardo_rivera_beltran.sprintcuatro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.res.Configuration;
+
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 import org.osmdroid.util.GeoPoint;
+//import android.content.res.Configuration;
+import org.osmdroid.config.Configuration;
 import org.osmdroid.views.MapController;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.views.MapView;
@@ -24,8 +26,8 @@ public class Maps extends AppCompatActivity {
 
         mapView = (MapView) findViewById(R.id.miMapa);
 
-        //Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this));
-        Toast.makeText(this, "Sale un error con el método getInstance()", Toast.LENGTH_LONG).show();
+        Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this));
+        //Toast.makeText(this, "Sale un error con el método getInstance()", Toast.LENGTH_LONG).show();
 
         mapView.setTileSource(TileSourceFactory.MAPNIK);
 
