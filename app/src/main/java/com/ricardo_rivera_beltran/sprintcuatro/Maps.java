@@ -27,7 +27,7 @@ public class Maps extends AppCompatActivity {
         mapView = (MapView) findViewById(R.id.miMapa);
 
         Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this));
-        //Toast.makeText(this, "Sale un error con el método getInstance()", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Florida, Valle del Cauca", Toast.LENGTH_LONG).show();
 
         mapView.setTileSource(TileSourceFactory.MAPNIK);
 
@@ -37,7 +37,7 @@ public class Maps extends AppCompatActivity {
         GeoPoint florida = new GeoPoint(3.3284723, -76.2418945);
 
         mapController.setCenter(florida);
-        mapController.setZoom(6);
+        mapController.setZoom(12);
         mapView.setMultiTouchControls(true);
     }
 }
