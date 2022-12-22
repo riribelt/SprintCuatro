@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "801076968325",
+    "project_id": "sprintcuatro",
+    "storage_bucket": "sprintcuatro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801076968325:android:96e049d8b3e142040822ec",
+        "android_client_info": {
+          "package_name": "com.ricardo_rivera_beltran.sprintcuatro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801076968325-76seduqefal91npfd5335m6c4pme42gk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9I0wFlauXfyZP2rc5GB1vlyt7MyHBtrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801076968325-76seduqefal91npfd5335m6c4pme42gk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
