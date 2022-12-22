@@ -5,31 +5,37 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.widget.Toast;
 
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapController;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.views.MapView;
 
 public class Maps extends AppCompatActivity {
 
-    private MapView myOpenMapView;
-    private MapController myMapController;
+    private MapView mapView;
+    private MapController mapController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        //map = (MapView) findViewById(R.id.openmapview);
+
+        mapView = (MapView) findViewById(R.id.miMapa);
+
+        //Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this));
+        Toast.makeText(this, "Sale un error con el método getInstance()", Toast.LENGTH_LONG).show();
+
+        mapView.setTileSource(TileSourceFactory.MAPNIK);
+
+        mapView.setBuiltInZoomControls(true);
+        mapController = (MapController) mapView.getController();
+
         GeoPoint florida = new GeoPoint(3.3284723, -76.2418945);
 
-        myOpenMapView = (MapView)findViewById(R.id.openmapview);
-        myOpenMapView.setBuiltInZoomControls(true);
-        myMapController = (MapController) myOpenMapView.getController();
-        myMapController.setCenter(florida);
-        myMapController.setZoom(6);
-
-        myOpenMapView.setMultiTouchControls(true);
-
-        //Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences())
+        mapController.setCenter(florida);
+        mapController.setZoom(6);
+        mapView.setMultiTouchControls(true);
     }
 }
